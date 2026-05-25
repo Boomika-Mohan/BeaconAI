@@ -130,7 +130,7 @@ export default function Chat() {
     if (chatId) await saveMessage(chatId, 'user', text)
 
     try {
-      const response = await fetch('http://localhost:3000/api/chat', {
+      const response = await fetch('https://beaconai-jcl8.onrender.com/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: [...messages, userMessage] })
@@ -150,7 +150,7 @@ export default function Chat() {
     setMessages(previousMessages)
     setLoading(true)
     try {
-      const response = await fetch('http://localhost:3000/api/chat', {
+      const response = await fetch('https://beaconai-jcl8.onrender.com/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: previousMessages })
