@@ -27,7 +27,7 @@ app.post('/api/chat', async (req, res) => {
       }))
     ]
     const response = await groq.chat.completions.create({
-      model: 'llama3-8b-8192',
+      model: 'openai/gpt-oss-120b',
       messages: formattedMessages,
       max_tokens: 8192,
       temperature: 0.7
